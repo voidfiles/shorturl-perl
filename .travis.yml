@@ -1,0 +1,4 @@
+language: perl
+perl:
+  - "5.18"
+script: perl short.pl test

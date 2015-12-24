@@ -9,8 +9,9 @@ get '/:url_id' => sub {
   my $client    = Redis->new;
   my $c         = shift;
   my $hash      = $c->param('url_id');
+  say $hash;
   my $unique_id = $hashids->decode($hash);
-  my $url       = $client->get("url:${unique_id}");
+  my $url       = $client->get("url:" . $unique_id);
 
   if (!$url) {
     return $c->reply->not_found;
@@ -34,7 +35,8 @@ post '/' => sub {
     $client->set($url_key => $url->{url});
 
     $c->render(json => {
-      url => 'http://' . $host . '/' . $hash
+      url => 'http://' . $host . '/' . $hash,
+      hash => $hash
     });
 
   } else {

@@ -6,4 +6,4 @@ services:
 install:
   - cpanm Carton
   - carton install
-script: exec perl short.pl test
+script: carton exec perl short.pl test

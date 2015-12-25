@@ -3,4 +3,7 @@ perl:
   - "5.18"
 services:
   - redis-server
-script: perl short.pl test
+install:
+  - cpanm Carton
+  - carton install
+script: exec perl short.pl test

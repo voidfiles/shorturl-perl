@@ -20,7 +20,7 @@ ssh -o StrictHostKeyChecking=no root@192.241.228.197 'bash -s' <<SCRIPT
 set -ax;
 cd /srv/shorturl/builds/;
 tar xf $BUILD_TAG.tar.gz;
-ln -sf $BUILD_TAG current;
+ln -sfT $BUILD_TAG current;
 cd current;
 carton install --deployment --cached;
 /usr/bin/supervisorctl restart shorturl;

@@ -15,8 +15,8 @@ export BUILD_TAG="shorturl-$BUILD_TAG"
 mv build $BUILD_TAG;
 time tar -cf "$BUILD_TAG.tar.gz" "$BUILD_TAG";
 mv $BUILD_TAG build;
-scp $BUILD_TAG.tar.gz root@192.241.228.197:/srv/shorturl/builds/
-ssh root@192.241.228.197 'bash -s' <<SCRIPT
+scp  -o StrictHostKeyChecking=no $BUILD_TAG.tar.gz root@192.241.228.197:/srv/shorturl/builds/
+ssh -o StrictHostKeyChecking=no root@192.241.228.197 'bash -s' <<SCRIPT
 set -ax;
 cd /srv/shorturl/builds/;
 tar xf $BUILD_TAG.tar.gz;

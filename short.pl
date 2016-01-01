@@ -21,6 +21,7 @@ get '/:url_id' => sub {
 
 
 get '/test/test' => sub {
+  my $c = shift;
   return $c->render(text => "test");
 };
 

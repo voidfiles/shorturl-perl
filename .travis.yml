@@ -15,4 +15,4 @@ after_success:
   - eval "$(ssh-agent -s)" #start the ssh agent
   - chmod 600 ./id_rsa # this key should have push access
   - ssh-add ./id_rsa
-  - deploy.sh
+  - bash deploy.sh

@@ -19,6 +19,11 @@ get '/:url_id' => sub {
   return $c->redirect_to($url);
 };
 
+
+get '/test/test' => sub {
+  return $c->render(text => "test");
+};
+
 post '/' => sub {
   my $c     = shift;
   my $url   = $c->req->json;

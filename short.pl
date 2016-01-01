@@ -5,6 +5,12 @@ use Hashids;
 
 my $hashids = Hashids->new('random');
 
+
+get '/test/test' => sub {
+  my $c = shift;
+  return $c->render(text => "test");
+};
+
 get '/:url_id' => sub {
   my $client    = Redis->new;
   my $c         = shift;
@@ -17,12 +23,6 @@ get '/:url_id' => sub {
   }
 
   return $c->redirect_to($url);
-};
-
-
-get '/test/test' => sub {
-  my $c = shift;
-  return $c->render(text => "test");
 };
 
 post '/' => sub {

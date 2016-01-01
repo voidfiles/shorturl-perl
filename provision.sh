@@ -20,7 +20,7 @@ server {
        listen 80;
 
        location / {
-          proxy_pass        http://localhost:5001;
+          proxy_pass        http://localhost:5000;
           proxy_set_header  X-Real-IP \$remote_addr;
         }
 
@@ -28,4 +28,17 @@ server {
 InputComesFromHERE
 
 /etc/init.d/nginx reload;
+
+cat <<InputComesFromHERE > /etc/supervisor/conf.d/shorturl.conf
+
+[program:shorturl]
+directory=/srv/shorturl/builds/current
+command=/usr/bin/carton exec -- starman --workers 10 --port 5000 -E production --disble-keepalive
+user=root
+stdout_logfile=/var/log/shorturl.perl.log
+stderr_logfile=/var/log/shorturl.perl.log
+autostart=false
+InputComesFromHERE
+
+/usr/bin/supervisorctl reread;
 

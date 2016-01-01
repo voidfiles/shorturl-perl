@@ -9,7 +9,6 @@ get '/:url_id' => sub {
   my $client    = Redis->new;
   my $c         = shift;
   my $hash      = $c->param('url_id');
-  say $hash;
   my $unique_id = $hashids->decode($hash);
   my $url       = $client->get("url:" . $unique_id);
 

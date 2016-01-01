@@ -23,6 +23,6 @@ tar xf $BUILD_TAG.tar.gz;
 ln -sf $BUILD_TAG current;
 cd current;
 carton install --deployment --cached;
-supervisortctl shorturl restart;
+/usr/bin/supervisorctl restart shorturl;
 SCRIPT
 

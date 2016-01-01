@@ -6,7 +6,7 @@ use Hashids;
 my $hashids = Hashids->new('random');
 
 
-get '/test/test' => sub {
+get '/test/test2' => sub {
   my $c = shift;
   return $c->render(text => "test");
 };

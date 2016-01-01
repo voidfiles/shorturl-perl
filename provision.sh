@@ -41,4 +41,7 @@ autostart=false
 InputComesFromHERE
 
 /usr/bin/supervisorctl reread;
+/usr/bin/supervisorctl update;
+/usr/bin/supervisorctl stop shorturl;
+/usr/bin/supervisorctl start shorturl;
 

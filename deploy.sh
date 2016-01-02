@@ -7,8 +7,7 @@ cp -fR short.pl build/;
 cp -fR local build/;
 rm -fR build/local/bin;
 rm -fR build/local/lib;
-cp -fR Shorturl build/;
-cp -fR app.psgi build/;
+cp -fR shorturl build/;
 cp -fR t build/;
 export BUILD_TAG=`date "+%Y%m%d%H%M%S"`
 export BUILD_TAG="shorturl-$BUILD_TAG"

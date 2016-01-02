@@ -1,4 +1,4 @@
-package Shorturl::Schema;
+package Shorturl::Schema::URL;
 use strict;
 use warnings;
 

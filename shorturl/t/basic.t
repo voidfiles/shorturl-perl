@@ -1,12 +1,9 @@
+use Mojo::Base -strict;
+
 use Test::More;
 use Test::Mojo;
 
-# Include application
-use FindBin;
-require "$FindBin::Bin/../short.pl";
-
-# Allow 302 redirect responses
-my $t = Test::Mojo->new;
+my $t = Test::Mojo->new('Shorturl');
 $t->ua->max_redirects(1);
 
 # Test if the HTML login form exists

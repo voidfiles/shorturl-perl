@@ -32,7 +32,7 @@ InputComesFromHERE
 cat <<InputComesFromHERE > /etc/supervisor/conf.d/shorturl.conf
 
 [program:shorturl]
-directory=/srv/shorturl/builds/current
+directory=/srv/shorturl/builds/current/shorturl
 command=/usr/bin/carton exec -- starman --workers 10 --port 5000 -E production --disble-keepalive
 user=root
 stdout_logfile=/var/log/shorturl.perl.log

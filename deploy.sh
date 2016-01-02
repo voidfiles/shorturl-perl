@@ -3,7 +3,6 @@ rm -fR build;
 mkdir build;
 cp -fR cpanfile build/;
 cp -fR cpanfile.snapshot build/;
-cp -fR short.pl build/;
 cp -fR local build/;
 rm -fR build/local/bin;
 rm -fR build/local/lib;

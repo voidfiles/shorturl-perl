@@ -12,6 +12,7 @@ apt-get update;
 apt-get install nginx supervisor build-essential curl;
 
 touch /etc/nginx/sites-enabled/shorturl;
+touch /etc/nginx/sites-enabled/default;
 rm /etc/nginx/sites-enabled/default;
 
 cat <<InputComesFromHERE > /etc/nginx/sites-enabled/shorturl

@@ -71,7 +71,7 @@ sub pop {
 sub  event {
     my $self = shift;
     my (%args) = @_;
-    my $sub   = %args->{sub};
+    my $sub   = $args{sub};
     my $child = $self->push(%args);
 
     if ($child) {

@@ -27,9 +27,12 @@ sub call {
     if ($slowjam_context) {
       my $profile = $slowjam_context->stop();
       if ($profile) {
-        print "rendering event\n";
-        $profile->render_event_for_console();
-        print "\n";
+        my $slowjam_log_line = $profile->render_event_for_console();
+        if ( my $logger = $self->logger ) {
+            $logger->($slowjam_log_line);
+        } else {
+            $env->{'psgi.errors'}->print($slowjam_log_line);
+        }
       }
     }
     # Do something with $res

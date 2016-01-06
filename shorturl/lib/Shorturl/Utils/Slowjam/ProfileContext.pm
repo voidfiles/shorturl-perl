@@ -133,10 +133,7 @@ sub render_event_for_console {
   my $output = $self->render_event();
   my $header = ['       time   exec time event', '----------- ----------- ------------------------------'];
   push($header, @{ $output });
-  print "\n";
-  print join("\n", @{ $header });
-  print "\n";
-  return;
+  return "\n" . join("\n", @{ $header }) . "\n";
 }
 
 sub to_hash {

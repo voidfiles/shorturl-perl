@@ -90,6 +90,18 @@ DISTRIBUTIONS
       Filter::Util::Call 0
       Test::More 0
       perl 5.008001
+  Dist-CheckConflicts-0.11
+    pathname: D/DO/DOY/Dist-CheckConflicts-0.11.tar.gz
+    provides:
+      Dist::CheckConflicts 0.11
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 6.30
+      Module::Runtime 0.009
+      base 0
+      strict 0
+      warnings 0
   Encode-Locale-1.05
     pathname: G/GA/GAAS/Encode-Locale-1.05.tar.gz
     provides:
@@ -457,6 +469,48 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 0
       perl 5.006002
+  Log-Dispatch-2.51
+    pathname: D/DR/DROLSKY/Log-Dispatch-2.51.tar.gz
+    provides:
+      Log::Dispatch 2.51
+      Log::Dispatch::ApacheLog 2.51
+      Log::Dispatch::Base 2.51
+      Log::Dispatch::Code 2.51
+      Log::Dispatch::Email 2.51
+      Log::Dispatch::Email::MIMELite 2.51
+      Log::Dispatch::Email::MailSend 2.51
+      Log::Dispatch::Email::MailSender 2.51
+      Log::Dispatch::Email::MailSendmail 2.51
+      Log::Dispatch::File 2.51
+      Log::Dispatch::File::Locked 2.51
+      Log::Dispatch::Handle 2.51
+      Log::Dispatch::Null 2.51
+      Log::Dispatch::Output 2.51
+      Log::Dispatch::Screen 2.51
+      Log::Dispatch::Syslog 2.51
+    requirements:
+      Carp 0
+      Devel::GlobalDestruction 0
+      Dist::CheckConflicts 0.02
+      Encode 0
+      ExtUtils::MakeMaker 0
+      Fcntl 0
+      IO::Handle 0
+      Module::Runtime 0
+      Params::Validate 1.03
+      Scalar::Util 0
+      Sys::Syslog 0.28
+      base 0
+      perl 5.006
+      strict 0
+      warnings 0
+  Log-Trace-1.070
+    pathname: B/BB/BBC/Log-Trace-1.070.tar.gz
+    provides:
+      Log::Trace 1.070
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
   Math-BigInt-1.999710
     pathname: P/PJ/PJACKLAM/Math-BigInt-1.999710.tar.gz
     provides:
@@ -492,6 +546,17 @@ DISTRIBUTIONS
       Pod::Man 0
       TAP::Harness::Env 0
       perl 5.006
+      strict 0
+      warnings 0
+  Module-Implementation-0.09
+    pathname: D/DR/DROLSKY/Module-Implementation-0.09.tar.gz
+    provides:
+      Module::Implementation 0.09
+    requirements:
+      Carp 0
+      ExtUtils::MakeMaker 0
+      Module::Runtime 0.012
+      Try::Tiny 0
       strict 0
       warnings 0
   Module-Runtime-0.014
@@ -709,6 +774,37 @@ DISTRIBUTIONS
       POSIX 0
       Time::Local 0
       perl 5.008001
+  Params-Validate-1.21
+    pathname: D/DR/DROLSKY/Params-Validate-1.21.tar.gz
+    provides:
+      Params::Validate 1.21
+      Params::Validate::Constants 1.21
+      Params::Validate::PP 1.21
+      Params::Validate::XS 1.21
+    requirements:
+      Carp 0
+      Devel::Peek 0
+      Exporter 0
+      ExtUtils::CBuilder 0
+      ExtUtils::MakeMaker 0
+      File::Spec 0
+      File::Temp 0
+      Module::Build 0.28
+      Module::Implementation 0
+      Scalar::Util 1.10
+      Test::Fatal 0
+      Test::More 0.96
+      Test::Requires 0
+      Tie::Array 0
+      Tie::Hash 0
+      XSLoader 0
+      base 0
+      lib 0
+      overload 0
+      perl 5.008001
+      strict 0
+      vars 0
+      warnings 0
   PerlIO-via-Timeout-0.32
     pathname: D/DA/DAMS/PerlIO-via-Timeout-0.32.tar.gz
     provides:
@@ -896,6 +992,18 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 6.17
       perl 5.006
+  Test-Fatal-0.014
+    pathname: R/RJ/RJBS/Test-Fatal-0.014.tar.gz
+    provides:
+      Test::Fatal 0.014
+    requirements:
+      Carp 0
+      Exporter 5.57
+      ExtUtils::MakeMaker 0
+      Test::Builder 0
+      Try::Tiny 0.07
+      strict 0
+      warnings 0
   Test-Harness-3.35
     pathname: L/LE/LEONT/Test-Harness-3.35.tar.gz
     provides:
@@ -950,6 +1058,15 @@ DISTRIBUTIONS
       Test::Harness 3.35
     requirements:
       ExtUtils::MakeMaker 0
+  Test-Requires-0.10
+    pathname: T/TO/TOKUHIROM/Test-Requires-0.10.tar.gz
+    provides:
+      Test::Requires 0.10
+    requirements:
+      ExtUtils::MakeMaker 6.64
+      Test::Builder::Module 0
+      Test::More 0.47
+      perl 5.006
   Test-SharedFork-0.35
     pathname: E/EX/EXODIST/Test-SharedFork-0.35.tar.gz
     provides:

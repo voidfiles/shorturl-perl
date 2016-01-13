@@ -83,12 +83,14 @@ sub  event {
 }
 
 sub mark {
-    my ($self, $event, $fmt, $extras, $tag) = @_;
+    my $self = shift;
+    my (%args) = @_;
+    $args{is_marker} = 1;
     if (!$self->profiling()) {
         return;
     }
 
-    my $profile = Shorturl::Utils::Slowjam::ProfileContext->new(event => $event, fmt => $fmt, extras => $extras, tag => $tag, is_marker => 1);
+    my $profile = Shorturl::Utils::Slowjam::ProfileContext->new(%args);
     CORE::push($self->{_stack}[-1]->{inner_events}, $profile);
 }
 

@@ -26,7 +26,7 @@ sub call {
 
     if ($slowjam_context) {
       my $profile = $slowjam_context->stop();
-      if ($profile) {
+      if ($profile and $profile->execution_time() > 200) {
         my $slowjam_log_line = $profile->render_event_for_console();
         if ( my $logger = $self->logger ) {
             $logger->($slowjam_log_line);

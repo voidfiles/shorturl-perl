@@ -1,3 +1,5 @@
 # Post some JSON
 curl -H "Content-Type: application/json" -X POST -d '{"url": "http://google.com"}' http://localhost:3000/
 
+curl -H "Content-Type: application/json" -X POST -d '{"url": "http://google.com"}' http://192.241.228.197/
+

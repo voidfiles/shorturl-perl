@@ -5,9 +5,9 @@ use warnings;
 
 use Time::HiRes;
 use Shorturl::Utils::Slowjam;
-use Data::Dumper;
+use Net::Statsd;
 
-sub graphite_timer {
+sub timer {
     my $stat = shift;
     my (%args) = @_;
     $args{event} = $stat;
@@ -15,15 +15,22 @@ sub graphite_timer {
 
     my $slowjam_context = Shorturl::Utils::Slowjam::get_slowjam_context();
 
-
     $slowjam_context->event(%args);
 
     my $end_time = [ Time::HiRes::gettimeofday ];
-    my $request_time_ms = Time::HiRes::tv_interval($start_time, $end_time);
+    my $interval = Time::HiRes::tv_interval( $start_time ) * 1000; # ms
 
-    # Record this to statsd
-    # if _instance:
-    #     _instance.graphite_duration(stat, request_time_ms, prefix)
+    Net::Statsd::timing($stat, $interval);
+}
+
+sub count {
+    my $stat = shift;
+    my (%args) = @_;
+    $args{event} = $stat;
+    my $slowjam_context = Shorturl::Utils::Slowjam::get_slowjam_context();
+    $slowjam_context->mark(%args);
+
+    Net::Statsd::increment($stat);
 }
 
 1;

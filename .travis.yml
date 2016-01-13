@@ -5,6 +5,7 @@ services:
 - redis-server
 install:
 - cpanm Carton
+- carton install
 - carton bundle
 - carton install --cached --deployment
 script: cd shorturl; carton exec perl script/shorturl test; cd ..;
@@ -15,4 +16,4 @@ after_success:
   - eval "$(ssh-agent -s)" #start the ssh agent
   - chmod 600 ./id_rsa # this key should have push access
   - ssh-add ./id_rsa
-  - bash deploy.sh
+  - bash scripts/deploy.sh

@@ -18,7 +18,7 @@ sub test {
     Shorturl::Utils::Statsd::count("test.testing_awesome2");
   });
 
-  return $self->render(html => "test3");
+  return $self->render(text => "test3");
 };
 
 1;

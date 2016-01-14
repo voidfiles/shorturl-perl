@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 rm -fR build;
 mkdir build;
 cp -fR cpanfile build/;

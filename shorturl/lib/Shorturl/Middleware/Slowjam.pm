@@ -1,3 +1,5 @@
+use strict;
+
 package Shorturl::Middleware::Slowjam;
 use parent qw( Plack::Middleware );
 use Plack::Util::Accessor 'logger';

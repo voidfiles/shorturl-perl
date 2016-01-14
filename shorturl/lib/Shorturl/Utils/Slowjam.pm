@@ -1,3 +1,5 @@
+use strict;
+
 package Shorturl::Utils::Slowjam;
 use Shorturl::Utils::Slowjam::ProfileGlobalContext;
 use Env qw(SLOWJAM_ENABLED);

@@ -9,7 +9,7 @@ install:
 - carton bundle
 - carton install --cached --deployment
 script:
-- ./scripts/lint.sh
+- carton exec ./scripts/lint.sh
 - cd shorturl; carton exec perl script/shorturl test; cd ..;
 before_install:
 - openssl aes-256-cbc -K $encrypted_ba9823ddfcf4_key -iv $encrypted_ba9823ddfcf4_iv

@@ -2,9 +2,9 @@ use strict;
 
 package Shorturl::Utils::Slowjam;
 use Shorturl::Utils::Slowjam::ProfileGlobalContext;
-use Env qw(SLOWJAM_ENABLED);
+use Env;
 
-our $SLOWJAM_PROFILING = !!SLOWJAM_ENABLED;
+our $SLOWJAM_PROFILING = $ENV{SLOWJAM_ENABLED} ne '0';
 my $SLOWJAM_CONTEXT = undef;
 
 sub enable_profiling {

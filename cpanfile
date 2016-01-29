@@ -11,4 +11,5 @@ requires 'Plack::Middleware::Debug', '0.16';
 requires 'Plack::Middleware::Debug::Profiler::NYTProf', '0.06';
 requires 'Devel::NYTProf', '6.02';
 requires 'Perl::Critic', '1.126';
+requires 'Try::Tiny', '0.24';
 

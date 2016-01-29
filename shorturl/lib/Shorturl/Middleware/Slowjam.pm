@@ -14,7 +14,7 @@ sub call {
     my $req = Plack::Request->new($env);
 
     if ($slowjam_context) {
-      $extras = {
+      my $extras = {
           'host'        => $env->{HTTP_HOST},
           'ip'          => $req->address,
           'method'      => $req->method,
